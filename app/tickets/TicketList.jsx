@@ -1,6 +1,10 @@
 import Link from 'next/link';
 
 const getTickets = async () => {
+  //imitate delay
+  await new Promise(resolve => setTimeout(resolve, 2000));
+
+  //data fetching
   const res = await fetch('http://localhost:4000/tickets', {
     next: { revalidate: 0 }, //to opt out of cashing
   });
